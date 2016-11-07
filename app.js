@@ -1,5 +1,3 @@
-console.log('hello world');
-
 $(document).ready(function() {
 
   var color = '';
@@ -8,6 +6,7 @@ $(document).ready(function() {
   var countBlue = 0;
   var countGreen = 0;
 
+  //=============  event listener  ========================
   $("button").on("click", function(event) {
     event.preventDefault();
 
@@ -16,11 +15,12 @@ $(document).ready(function() {
     addDiv(color);
   });
 
+  // builds color-cube divs
   function buildDiv(color) {
-    console.log(color);
     $(".container").append('<div class="color-cube ' + color + '"></div>');
   }
 
+  // adds to counter
   function addDiv(color) {
     switch (color) {
       case 'red':
@@ -38,7 +38,6 @@ $(document).ready(function() {
       default:
         countBlue++;
         $('#blue').text('Total red: ' + countBlue);
-
     }
   }
 });
